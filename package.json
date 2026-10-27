@@ -1,0 +1,12 @@
+{
+  "name": "school-management-system-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static, no-backend interactive demo of the Vidyalaya school management system. Synthetic data only.",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node --check assets/js/data.js && node --check assets/js/core.js && node --check assets/js/views-public.js && node --check assets/js/views-staff.js && node --check assets/js/views-school.js && node --check assets/js/views-portal.js && node --check assets/js/views-roadmap.js"
+  },
+  "engines": { "node": ">=20.11" }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-preset="indigo-marigold" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vidyalaya ERP — Interactive Demo</title>
+  <meta name="description" content="Clickable demo of a school management system for Indian schools: attendance, WhatsApp alerts, fees, exams, parent portal, HOD, operator console and the school website. Synthetic data only.">
+  <meta property="og:title" content="Vidyalaya ERP — Interactive Demo">
+  <meta property="og:description" content="Try every role: Principal, Admin, Teacher, HOD, Accountant, Parent, Student and Operator.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233730A3'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23F5A524' font-family='Arial' font-weight='bold'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <div id="app"></div>
+  <button id="wa-fab" class="wa-fab no-print" aria-label="Open the simulated guardian WhatsApp">💬</button>
+  <section id="wa-panel" class="wa-panel" hidden aria-label="Simulated WhatsApp messages"></section>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <noscript><p style="padding:24px">This demo needs JavaScript.</p></noscript>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/views-public.js"></script>
+  <script src="assets/js/views-staff.js"></script>
+  <script src="assets/js/views-school.js"></script>
+  <script src="assets/js/views-portal.js"></script>
+  <script src="assets/js/views-roadmap.js"></script>
+  <script>DEMO.boot();</script>
+</body>
+</html>
