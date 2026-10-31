@@ -62,7 +62,7 @@
     ['principal', '👩‍💼', 'Principal', 'Dr. Anjali — Today view, approvals, results, staff, audit'],
     ['admin', '🗂️', 'School Admin', 'Sunita — students, import, messaging, fees & exams setup, website'],
     ['teacher', '🧑‍🏫', 'Teacher', 'Rakesh — 30-second attendance, marks, homework, own leave'],
-    ['hod', '🔬', 'HOD', 'Mrs. Kulkarni — department, leave approvals, tasks, marks review'],
+    ['hod', '🔬', 'HOD', 'Mrs. Jha — department, leave approvals, tasks, marks review'],
     ['accountant', '🧾', 'Accountant', 'Vikram — fee counter, receipts, cheques, day close'],
     ['parent', '👪', 'Parent', 'Meena — two children, results, fees, pay online, PTM'],
     ['student', '🎒', 'Student', 'Aarav — homework, results, fees'],
@@ -277,8 +277,8 @@
     },
     about: () => `${pageHead('About the school', 'History, leadership and affiliation')}<div class="site-wrap grid g3">
       <div class="card span2"><h2>Our story</h2><p>Founded in ${D.school.founded} with 60 children in two rooms, ${esc(D.school.name)} today serves over 600 students from Nursery to Class 10. We are affiliated to ${esc(D.school.board)}.</p>
-        <h3>Vision</h3><p class="muted">To be a joyful school where every child learns to think, care and lead.</p><h3>Mission</h3><ul class="muted"><li>Concept-first teaching with small class sizes</li><li>Bilingual confidence in English and Hindi/Marathi</li><li>Sports, arts and community service for every child</li></ul></div>
-      <div class="card"><h3>Leadership</h3>${[['Dr. Anjali Deshpande', 'Principal'], ['Mrs. Kavita Kulkarni', 'HOD Science'], ['Mr. Manoj Gupta', 'HOD Mathematics'], ['Mrs. Sunita Patil', 'Office Superintendent']].map(([n, r], i) => `<div class="list-item"><div class="avatar" style="background:linear-gradient(135deg,${grad[i]});color:#fff">${n.split(' ').map((x) => x[0]).slice(-2).join('')}</div><div class="grow"><b>${n}</b><div class="small muted">${r}</div></div></div>`).join('')}</div></div>`,
+        <h3>Vision</h3><p class="muted">To be a joyful school where every child learns to think, care and lead.</p><h3>Mission</h3><ul class="muted"><li>Concept-first teaching with small class sizes</li><li>Bilingual confidence in English and Hindi</li><li>Sports, arts and community service for every child</li></ul></div>
+      <div class="card"><h3>Leadership</h3>${[['Dr. Anjali Sinha', 'Principal'], ['Mrs. Kavita Jha', 'HOD Science'], ['Mr. Manoj Gupta', 'HOD Mathematics'], ['Mrs. Sunita Kumari', 'Office Superintendent']].map(([n, r], i) => `<div class="list-item"><div class="avatar" style="background:linear-gradient(135deg,${grad[i]});color:#fff">${n.split(' ').map((x) => x[0]).slice(-2).join('')}</div><div class="grow"><b>${n}</b><div class="small muted">${r}</div></div></div>`).join('')}</div></div>`,
     academics: () => `${pageHead('Academics & calendar', 'Curriculum, examinations, timings and uniform')}<div class="site-wrap grid g2">
       <div class="card"><h3>Curriculum</h3><div class="table-wrap"><table><tr><th>Stage</th><th>Classes</th><th>Focus</th></tr>
         <tr><td>Foundational</td><td>Nursery–2</td><td>Play-based literacy & numeracy</td></tr><tr><td>Preparatory</td><td>3–5</td><td>Languages, EVS, maths, arts</td></tr>
@@ -292,11 +292,11 @@
         <p class="small muted mt">Downloadable forms: Admission form (PDF), Transfer certificate sample (PDF) — demo placeholders.</p></div></div>`,
     apply: () => `${pageHead('Online admission application', 'Your details are private and go only to the school office')}<div class="site-wrap" style="max-width:820px">
       <form class="card" data-form="apply"><div class="form-grid">
-        <label class="field">Child’s full name<input type="text" name="child" required value="Advay Patil"></label>
+        <label class="field">Child’s full name<input type="text" name="child" required value="Advay Kumar"></label>
         <label class="field">Class applying for<select name="cls">${['Nursery', 'LKG', 'UKG', ...Array.from({ length: 9 }, (_, i) => `Class ${i + 1}`)].map((c) => `<option>${c}</option>`).join('')}</select></label>
         <label class="field">Date of birth<input type="date" name="dob" value="2021-06-14"></label>
         <label class="field">Previous school (if any)<input type="text" name="prev" placeholder="Optional"></label>
-        <label class="field">Parent / guardian name<input type="text" name="parent" required value="Swati Patil"></label>
+        <label class="field">Parent / guardian name<input type="text" name="parent" required value="Swati Kumar"></label>
         <label class="field">Mobile number<input type="tel" name="mobile" required value="+91 90000 12345"></label>
         <label class="field full"><span><input type="checkbox" required checked> I have read the admission privacy notice and agree that the school may contact me about this application.</span></label>
       </div><div class="row mt"><button class="btn primary lg">Submit application</button><span class="small muted">Demo: the application appears in the School Admin’s “Admissions” inbox.</span></div></form></div>`,
@@ -310,7 +310,7 @@
     contact: () => `${pageHead('Contact us')}<div class="site-wrap grid g2">
       <div class="card"><h3>Visit us</h3><p>${esc(D.school.address)}<br>📞 ${esc(D.school.phone)}<br>✉️ ${esc(D.school.email)}</p><div class="ph" style="background:linear-gradient(135deg,#94a3b8,#475569)">🗺️ Map (embedded map in the real site)</div></div>
       <form class="card" data-form="enquiry"><h3>Send an enquiry</h3><div class="stack"><label class="field">Your name<input type="text" name="from" required value="Rohit K."></label>
-        <label class="field">Topic<input type="text" name="topic" required value="Is there a school bus from Satpur?"></label><label class="field">Message<textarea name="msg">Please share route details.</textarea></label>
+        <label class="field">Topic<input type="text" name="topic" required value="Is there a school bus from Nathnagar?"></label><label class="field">Message<textarea name="msg">Please share route details.</textarea></label>
         <button class="btn primary">Send enquiry</button></div></form></div>`,
   };
 

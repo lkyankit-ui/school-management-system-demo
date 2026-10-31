@@ -8,11 +8,11 @@ This is a clickable demo of the school management system, with every role and ev
 
 | Role | Persona | Highlights |
 |---|---|---|
-| 👩‍💼 Principal | Dr. Anjali Deshpande | Today dashboard, approvals for concessions, reversals and leave, results lock and publish, staff register, reports, audit log |
-| 🗂️ School Admin | Sunita Patil | Students and profiles, 6-step CSV import wizard, staff and additive roles, academic setup, calendar, fees and concessions, exams and grading, WhatsApp messaging with a kill switch, website CMS, admissions inbox, data rights, branding |
+| 👩‍💼 Principal | Dr. Anjali Sinha | Today dashboard, approvals for concessions, reversals and leave, results lock and publish, staff register, reports, audit log |
+| 🗂️ School Admin | Sunita Kumari | Students and profiles, 6-step CSV import wizard, staff and additive roles, academic setup, calendar, fees and concessions, exams and grading, WhatsApp messaging with a kill switch, website CMS, admissions inbox, data rights, branding |
 | 🧑‍🏫 Teacher | Rakesh Yadav | Self check-in, 30-second attendance (tap absentees), offline queue simulation, correction window then WhatsApp alerts, marks entry, homework, leave |
-| 🔬 HOD | Mrs. Kavita Kulkarni | Department home, leave approvals, cover assignment, staff tasks, remarks about teachers, marks review, syllabus progress |
-| 🧾 Accountant | Vikram Joshi | Fee counter with itemised dues and a printable receipt, receipts and reversals, cheques, online-payment reconciliation, day close |
+| 🔬 HOD | Mrs. Kavita Jha | Department home, leave approvals, cover assignment, staff tasks, remarks about teachers, marks review, syllabus progress |
+| 🧾 Accountant | Vikram Prasad | Fee counter with itemised dues and a printable receipt, receipts and reversals, cheques, online-payment reconciliation, day close |
 | 👪 Parent | Meena Devi | Two-child switcher, attendance calendar, absence notes, homework, report card, fees with Pay now (sandbox checkout), remarks, PTM RSVP |
 | 🎒 Student | Aarav Sharma | Homework, results, fees, account |
 | 🛰️ Operator | Ankit | All schools, create a branded school, go-live gates G1–G12, module switches, messaging mode, audited support access |

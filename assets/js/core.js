@@ -1,7 +1,7 @@
 /* Core: state, persistence, router, shell, i18n, theming, modal, toasts and the WhatsApp simulator. */
 (function () {
   const D = window.DEMO;
-  const STATE_KEY = 'sunrise-demo-state-v1';
+  const STATE_KEY = 'sunrise-demo-state-v2';
   const PREF_KEY = 'sunrise-demo-prefs-v1';
 
   // ---------- helpers ----------
@@ -34,42 +34,42 @@
         { to: 'Meena Devi', kind: 'School notice', text: 'Sunrise Public School: Diwali vacation from 2–8 November. Classes resume 9 November.', time: '25 Oct' },
       ],
       receipts: [
-        { no: 'R/26-27/01186', student: 'Ishaan Patil (8-A)', amount: 13000, mode: 'UPI', time: '08:51' },
-        { no: 'R/26-27/01187', student: 'Kavya Joshi (5-B)', amount: 4500, mode: 'Cash', time: '08:58' },
+        { no: 'R/26-27/01186', student: 'Ishaan Kumar (8-A)', amount: 13000, mode: 'UPI', time: '08:51' },
+        { no: 'R/26-27/01187', student: 'Kavya Choudhary (5-B)', amount: 4500, mode: 'Cash', time: '08:58' },
       ],
       receiptSeq: 1188, dayClosed: false,
       cheques: [
-        { no: '004512', bank: 'SBI Nashik', student: 'Om Gaikwad (9-B)', amount: 13000, status: 'pending' },
-        { no: '118870', bank: 'HDFC Gangapur Rd', student: 'Tanvi Rao (7-A)', amount: 10500, status: 'pending' },
-        { no: '220019', bank: 'Bank of Maharashtra', student: 'Yash Pawar (10-A)', amount: 13000, status: 'cleared' },
+        { no: '004512', bank: 'SBI Bhagalpur', student: 'Om Paswan (9-B)', amount: 13000, status: 'pending' },
+        { no: '118870', bank: 'HDFC Station Rd', student: 'Tanvi Srivastava (7-A)', amount: 10500, status: 'pending' },
+        { no: '220019', bank: 'Punjab National Bank', student: 'Yash Thakur (10-A)', amount: 13000, status: 'cleared' },
       ],
       leaves: [
-        { id: 'L1', who: 'Rahul Pawar', dept: 'Science', type: 'Casual leave', from: '30 Oct', to: '30 Oct', days: 1, reason: 'Family function', status: 'pending', approver: 'HOD' },
-        { id: 'L2', who: 'Kavita Kulkarni', dept: 'Science (HOD)', type: 'Earned leave', from: '12 Nov', to: '13 Nov', days: 2, reason: 'Travel', status: 'pending', approver: 'Principal' },
-        { id: 'L3', who: 'Asha Shinde', dept: 'Social Science (no HOD)', type: 'Sick leave', from: '28 Oct', to: '28 Oct', days: 1, reason: 'Medical appointment', status: 'pending', approver: 'Principal' },
+        { id: 'L1', who: 'Rahul Thakur', dept: 'Science', type: 'Casual leave', from: '30 Oct', to: '30 Oct', days: 1, reason: 'Family function', status: 'pending', approver: 'HOD' },
+        { id: 'L2', who: 'Kavita Jha', dept: 'Science (HOD)', type: 'Earned leave', from: '12 Nov', to: '13 Nov', days: 2, reason: 'Travel', status: 'pending', approver: 'Principal' },
+        { id: 'L3', who: 'Asha Ojha', dept: 'Social Science (no HOD)', type: 'Sick leave', from: '28 Oct', to: '28 Oct', days: 1, reason: 'Medical appointment', status: 'pending', approver: 'Principal' },
       ],
       myLeaves: [{ type: 'Casual leave', from: '03 Oct', to: '03 Oct', days: 1, status: 'approved' }],
       concessions: [
-        { id: 'C1', student: 'Riya More (4-A)', kind: 'Sibling 10%', amount: 3600, by: 'Sunita Patil', status: 'pending' },
-        { id: 'C2', student: 'Harsh Kale (9-B)', kind: 'Staff ward 25%', amount: 13000, by: 'Sunita Patil', status: 'pending' },
+        { id: 'C1', student: 'Riya Mahto (4-A)', kind: 'Sibling 10%', amount: 3600, by: 'Sunita Kumari', status: 'pending' },
+        { id: 'C2', student: 'Harsh Mandal (9-B)', kind: 'Staff ward 25%', amount: 13000, by: 'Sunita Kumari', status: 'pending' },
       ],
       reversals: [{ id: 'RV1', receipt: 'R/26-27/01142', student: 'Neha Singh (2-B)', amount: 4500, reason: 'Duplicate entry — paid twice by UPI', status: 'pending' }],
       homework: [],
       applications: [
-        { id: 'APP-0142', child: 'Advik Kulkarni', cls: 'Nursery', parent: 'Sachin Kulkarni', mobile: '+91 98xxxx 2211', date: '26 Oct', status: 'new' },
-        { id: 'APP-0141', child: 'Mira Chavan', cls: 'Class 5', parent: 'Rekha Chavan', mobile: '+91 97xxxx 8890', date: '25 Oct', status: 'under review' },
-        { id: 'APP-0139', child: 'Sai Deshmukh', cls: 'Class 1', parent: 'Mahesh Deshmukh', mobile: '+91 99xxxx 1020', date: '22 Oct', status: 'interview scheduled' },
+        { id: 'APP-0142', child: 'Advik Jha', cls: 'Nursery', parent: 'Sachin Jha', mobile: '+91 98xxxx 2211', date: '26 Oct', status: 'new' },
+        { id: 'APP-0141', child: 'Mira Choubey', cls: 'Class 5', parent: 'Rekha Choubey', mobile: '+91 97xxxx 8890', date: '25 Oct', status: 'under review' },
+        { id: 'APP-0139', child: 'Sai Prasad', cls: 'Class 1', parent: 'Mahesh Prasad', mobile: '+91 99xxxx 1020', date: '22 Oct', status: 'interview scheduled' },
       ],
       enquiries: [
         { from: 'Priya M.', topic: 'Transport availability for Indira Nagar', date: '26 Oct', status: 'new' },
         { from: 'R. Kale', topic: 'Class 11 streams offered?', date: '24 Oct', status: 'answered' },
       ],
       tasks: [
-        { id: 'T1', title: 'Upload Term 1 question paper', to: ['Rahul Pawar', 'Shruti Rao', 'Nikhil Singh'], due: '20 Oct', status: 'overdue', done: 1 },
-        { id: 'T2', title: 'Submit lab safety checklist', to: ['Priya Iyer', 'Deepak More'], due: '24 Oct', status: 'overdue', done: 0 },
-        { id: 'T3', title: 'Science exhibition project shortlist', to: ['Gauri Bhosale', 'Sanjay Mishra'], due: '05 Nov', status: 'open', done: 0 },
+        { id: 'T1', title: 'Upload Term 1 question paper', to: ['Rahul Thakur', 'Shruti Srivastava', 'Nikhil Singh'], due: '20 Oct', status: 'overdue', done: 1 },
+        { id: 'T2', title: 'Submit lab safety checklist', to: ['Priya Tiwari', 'Deepak Mahto'], due: '24 Oct', status: 'overdue', done: 0 },
+        { id: 'T3', title: 'Science exhibition project shortlist', to: ['Gauri Dubey', 'Sanjay Mishra'], due: '05 Nov', status: 'open', done: 0 },
       ],
-      staffRemarks: [{ about: 'Rahul Pawar', by: 'Kavita Kulkarni', date: '18 Oct', text: 'Classroom observation 9-A: good use of demonstrations; increase student questioning.', shared: true }],
+      staffRemarks: [{ about: 'Rahul Thakur', by: 'Kavita Jha', date: '18 Oct', text: 'Classroom observation 9-A: good use of demonstrations; increase student questioning.', shared: true }],
       checkIn: null,
       marks: {},
       marksSubmitted: false,
@@ -82,9 +82,9 @@
       ptm: { date: 'Sat, 31 Oct 2026', time: '10:30', rsvp: null },
       ackNotices: [],
       onlinePayments: [
-        { ref: 'PAY-7781', student: 'Anika Rao (7-B)', amount: 10500, status: 'posted', at: '07:12' },
-        { ref: 'PAY-7782', student: 'Dhruv Jadhav (10-A)', amount: 13000, status: 'unresolved', at: '07:40' },
-        { ref: 'PAY-7784', student: 'Saanvi More (1-B)', amount: 9000, status: 'verifying', at: '08:47' },
+        { ref: 'PAY-7781', student: 'Anika Srivastava (7-B)', amount: 10500, status: 'posted', at: '07:12' },
+        { ref: 'PAY-7782', student: 'Dhruv Pathak (10-A)', amount: 13000, status: 'unresolved', at: '07:40' },
+        { ref: 'PAY-7784', student: 'Saanvi Mahto (1-B)', amount: 9000, status: 'verifying', at: '08:47' },
       ],
       importStep: 0,
       supportAccess: null,

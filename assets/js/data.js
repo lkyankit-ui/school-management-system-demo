@@ -8,14 +8,14 @@
 
   const FIRST_B = ['Aarav','Vivaan','Aditya','Arjun','Reyansh','Krishna','Ishaan','Shaurya','Atharv','Kabir','Rohan','Pranav','Dhruv','Yash','Om','Sai','Harsh','Tanmay','Rudra','Kunal','Manav','Nikhil','Siddharth','Ved'];
   const FIRST_G = ['Diya','Ananya','Saanvi','Aadhya','Myra','Isha','Kavya','Riya','Anika','Pari','Navya','Sneha','Tanvi','Kiara','Mira','Shruti','Pooja','Neha','Aditi','Gauri','Sara','Ira','Tara','Avni'];
-  const LAST = ['Sharma','Patil','Deshmukh','Kulkarni','Joshi','Yadav','Gupta','Verma','Pawar','Shinde','Jadhav','More','Chavan','Rao','Nair','Iyer','Singh','Mehta','Agarwal','Bhosale','Gaikwad','Kale','Mishra','Pandey'];
+  const LAST = ['Sharma','Kumar','Prasad','Jha','Choudhary','Yadav','Gupta','Verma','Thakur','Ojha','Pathak','Mahto','Choubey','Srivastava','Ranjan','Tiwari','Singh','Rai','Agarwal','Dubey','Paswan','Mandal','Mishra','Pandey'];
   const GUARD_F = ['Rajesh','Sunil','Prakash','Mahesh','Sanjay','Anil','Vijay','Ramesh','Santosh','Deepak','Amit','Manoj'];
   const GUARD_M = ['Meena','Sunita','Kavita','Anita','Rekha','Asha','Lata','Savita','Seema','Jyoti','Priya','Swati'];
 
   D.school = {
-    name: 'Sunrise Public School', short: 'Sunrise', city: 'Nashik, Maharashtra', code: 'sunrise',
-    board: 'CBSE (Affiliation No. 1130xxx — demo)', founded: 1998, phone: '+91 253 000 0000', email: 'office@sunrise-school.example',
-    address: 'Plot 12, Gangapur Road, Nashik 422013', principal: 'Dr. Anjali Deshpande', motto: 'Learn · Lead · Light the way',
+    name: 'Sunrise Public School', short: 'Sunrise', city: 'Bhagalpur, Bihar', code: 'sunrise',
+    board: 'CBSE (Affiliation No. 1130xxx — demo)', founded: 1998, phone: '+91 641 000 0000', email: 'office@sunrise-school.example',
+    address: 'Plot 12, Station Road, Bhagalpur 812001', principal: 'Dr. Anjali Sinha', motto: 'Learn · Lead · Light the way',
     year: '2026–27', today: '2026-10-27', todayLabel: 'Tuesday, 27 October 2026',
   };
 
@@ -29,11 +29,11 @@
   };
 
   D.people = {
-    principal: { name: 'Dr. Anjali Deshpande', initials: 'AD', role: 'Principal', extra: 'also HOD Languages' },
-    admin: { name: 'Sunita Patil', initials: 'SP', role: 'School Admin' },
-    accountant: { name: 'Vikram Joshi', initials: 'VJ', role: 'Accountant' },
+    principal: { name: 'Dr. Anjali Sinha', initials: 'AS', role: 'Principal', extra: 'also HOD Languages' },
+    admin: { name: 'Sunita Kumari', initials: 'SK', role: 'School Admin' },
+    accountant: { name: 'Vikram Prasad', initials: 'VP', role: 'Accountant' },
     teacher: { name: 'Rakesh Yadav', initials: 'RY', role: 'Teacher', extra: 'Class teacher 6-B · Maths 6-B, Science 7-A' },
-    hod: { name: 'Mrs. Kavita Kulkarni', initials: 'KK', role: 'HOD Science', extra: 'also Teacher of 9-A Physics' },
+    hod: { name: 'Mrs. Kavita Jha', initials: 'KJ', role: 'HOD Science', extra: 'also Teacher of 9-A Physics' },
     parent: { name: 'Meena Devi', initials: 'MD', role: 'Parent', extra: 'Guardian of Aarav (6-B) and Diya (3-A)' },
     student: { name: 'Aarav Sharma', initials: 'AS', role: 'Student', extra: 'Class 6-B · Roll 1' },
     operator: { name: 'Ankit (Platform Operator)', initials: 'AK', role: 'Operator' },
@@ -41,7 +41,7 @@
 
   // Classes 1–10, sections A/B. Each section gets a seeded roster.
   D.sections = [];
-  const teachersPool = ['Rakesh Yadav','Pooja Nair','Sneha Kale','Amit Verma','Neha Joshi','Rahul Pawar','Shruti Rao','Manoj Gupta','Asha Shinde','Deepak More','Priya Iyer','Kunal Mehta','Swati Jadhav','Nikhil Singh','Lata Chavan','Sanjay Mishra','Gauri Bhosale','Vijay Pandey','Kavita Kulkarni','Ramesh Gaikwad'];
+  const teachersPool = ['Rakesh Yadav','Pooja Ranjan','Sneha Kumari','Amit Verma','Neha Choudhary','Rahul Thakur','Shruti Srivastava','Manoj Gupta','Asha Ojha','Deepak Mahto','Priya Tiwari','Kunal Rai','Swati Pathak','Nikhil Singh','Lata Choubey','Sanjay Mishra','Gauri Dubey','Vijay Pandey','Kavita Jha','Ramesh Paswan'];
   let admNo = 2401, tIdx = 0;
   for (let c = 1; c <= 10; c++) {
     for (const s of ['A', 'B']) {
@@ -71,35 +71,35 @@
   D.findStudent = (id) => D.allStudents().find((s) => s.id === id);
   D.section = (id) => D.sections.find((s) => s.id === id);
 
-  D.subjects = ['English', 'Hindi', 'Marathi', 'Mathematics', 'Science', 'Social Science', 'Computer'];
+  D.subjects = ['English', 'Hindi', 'Sanskrit', 'Mathematics', 'Science', 'Social Science', 'Computer'];
   D.departments = [
-    { id: 'sci', name: 'Science', hod: 'Kavita Kulkarni', members: ['Kavita Kulkarni','Rakesh Yadav','Rahul Pawar','Shruti Rao','Nikhil Singh','Priya Iyer','Deepak More','Gauri Bhosale','Sanjay Mishra'], subjects: ['Physics','Chemistry','Biology','Science'] },
-    { id: 'math', name: 'Mathematics', hod: 'Manoj Gupta', members: ['Manoj Gupta','Amit Verma','Kunal Mehta'], subjects: ['Mathematics'] },
-    { id: 'lang', name: 'Languages', hod: 'Anjali Deshpande', members: ['Pooja Nair','Sneha Kale','Neha Joshi','Swati Jadhav','Lata Chavan'], subjects: ['English','Hindi','Marathi'] },
-    { id: 'soc', name: 'Social Science', hod: null, members: ['Asha Shinde','Vijay Pandey','Ramesh Gaikwad'], subjects: ['History','Geography','Civics'] },
+    { id: 'sci', name: 'Science', hod: 'Kavita Jha', members: ['Kavita Jha','Rakesh Yadav','Rahul Thakur','Shruti Srivastava','Nikhil Singh','Priya Tiwari','Deepak Mahto','Gauri Dubey','Sanjay Mishra'], subjects: ['Physics','Chemistry','Biology','Science'] },
+    { id: 'math', name: 'Mathematics', hod: 'Manoj Gupta', members: ['Manoj Gupta','Amit Verma','Kunal Rai'], subjects: ['Mathematics'] },
+    { id: 'lang', name: 'Languages', hod: 'Anjali Sinha', members: ['Pooja Ranjan','Sneha Kumari','Neha Choudhary','Swati Pathak','Lata Choubey'], subjects: ['English','Hindi','Sanskrit'] },
+    { id: 'soc', name: 'Social Science', hod: null, members: ['Asha Ojha','Vijay Pandey','Ramesh Paswan'], subjects: ['History','Geography','Civics'] },
   ];
 
   D.staff = [
-    { name: 'Dr. Anjali Deshpande', roles: ['Principal','HOD'], dept: 'Languages', status: 'active', att: 'present', in: '07:41' },
-    { name: 'Sunita Patil', roles: ['School Admin'], dept: 'Office', status: 'active', att: 'present', in: '07:55' },
-    { name: 'Vikram Joshi', roles: ['Accountant'], dept: 'Office', status: 'active', att: 'present', in: '08:02' },
-    { name: 'Kavita Kulkarni', roles: ['HOD','Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:38' },
+    { name: 'Dr. Anjali Sinha', roles: ['Principal','HOD'], dept: 'Languages', status: 'active', att: 'present', in: '07:41' },
+    { name: 'Sunita Kumari', roles: ['School Admin'], dept: 'Office', status: 'active', att: 'present', in: '07:55' },
+    { name: 'Vikram Prasad', roles: ['Accountant'], dept: 'Office', status: 'active', att: 'present', in: '08:02' },
+    { name: 'Kavita Jha', roles: ['HOD','Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:38' },
     { name: 'Rakesh Yadav', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:52' },
-    { name: 'Pooja Nair', roles: ['Teacher','School Admin'], dept: 'Languages', status: 'active', att: 'present', in: '07:49' },
-    { name: 'Rahul Pawar', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'late', in: '08:21' },
-    { name: 'Shruti Rao', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'on leave', in: '—' },
+    { name: 'Pooja Ranjan', roles: ['Teacher','School Admin'], dept: 'Languages', status: 'active', att: 'present', in: '07:49' },
+    { name: 'Rahul Thakur', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'late', in: '08:21' },
+    { name: 'Shruti Srivastava', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'on leave', in: '—' },
     { name: 'Nikhil Singh', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:58' },
-    { name: 'Priya Iyer', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:45' },
-    { name: 'Deepak More', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:59' },
-    { name: 'Gauri Bhosale', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:50' },
+    { name: 'Priya Tiwari', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:45' },
+    { name: 'Deepak Mahto', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:59' },
+    { name: 'Gauri Dubey', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'present', in: '07:50' },
     { name: 'Sanjay Mishra', roles: ['Teacher'], dept: 'Science', status: 'active', att: 'not marked', in: '—' },
     { name: 'Manoj Gupta', roles: ['HOD','Teacher'], dept: 'Mathematics', status: 'active', att: 'present', in: '07:47' },
     { name: 'Amit Verma', roles: ['Teacher'], dept: 'Mathematics', status: 'active', att: 'present', in: '07:56' },
-    { name: 'Kunal Mehta', roles: ['Teacher'], dept: 'Mathematics', status: 'active', att: 'half-day', in: '07:50' },
-    { name: 'Sneha Kale', roles: ['Teacher'], dept: 'Languages', status: 'active', att: 'present', in: '07:53' },
-    { name: 'Neha Joshi', roles: ['Teacher'], dept: 'Languages', status: 'active', att: 'present', in: '07:44' },
-    { name: 'Swati Jadhav', roles: ['Teacher'], dept: 'Languages', status: 'active', att: 'on duty', in: '—' },
-    { name: 'Asha Shinde', roles: ['Teacher'], dept: 'Social Science', status: 'active', att: 'present', in: '07:57' },
+    { name: 'Kunal Rai', roles: ['Teacher'], dept: 'Mathematics', status: 'active', att: 'half-day', in: '07:50' },
+    { name: 'Sneha Kumari', roles: ['Teacher'], dept: 'Languages', status: 'active', att: 'present', in: '07:53' },
+    { name: 'Neha Choudhary', roles: ['Teacher'], dept: 'Languages', status: 'active', att: 'present', in: '07:44' },
+    { name: 'Swati Pathak', roles: ['Teacher'], dept: 'Languages', status: 'active', att: 'on duty', in: '—' },
+    { name: 'Asha Ojha', roles: ['Teacher'], dept: 'Social Science', status: 'active', att: 'present', in: '07:57' },
     { name: 'Vijay Pandey', roles: ['Teacher'], dept: 'Social Science', status: 'invited', att: '—', in: '—' },
   ];
 
@@ -123,27 +123,27 @@
 
   D.childData = {
     'S-AARAV': {
-      marks: { English: 84, Hindi: 78, Marathi: 72, Mathematics: 91, Science: 88, 'Social Science': 76, Computer: 95 },
+      marks: { English: 84, Hindi: 78, Sanskrit: 72, Mathematics: 91, Science: 88, 'Social Science': 76, Computer: 95 },
       homework: [
         { subj: 'Mathematics', title: 'Exercise 5.2 — Fractions (Q1–Q12)', due: 'Tomorrow', by: 'Rakesh Yadav', status: 'pending' },
-        { subj: 'Science', title: 'Draw and label the parts of a flower', due: 'Tomorrow', by: 'Priya Iyer', status: 'pending' },
-        { subj: 'English', title: 'Read chapter 6 and write a summary (150 words)', due: '30 Oct', by: 'Neha Joshi', status: 'pending' },
-        { subj: 'Hindi', title: 'कविता याद करें — "पुष्प की अभिलाषा"', due: '24 Oct', by: 'Sneha Kale', status: 'submitted' },
+        { subj: 'Science', title: 'Draw and label the parts of a flower', due: 'Tomorrow', by: 'Priya Tiwari', status: 'pending' },
+        { subj: 'English', title: 'Read chapter 6 and write a summary (150 words)', due: '30 Oct', by: 'Neha Choudhary', status: 'pending' },
+        { subj: 'Hindi', title: 'कविता याद करें — "पुष्प की अभिलाषा"', due: '24 Oct', by: 'Sneha Kumari', status: 'submitted' },
       ],
       remarks: [
         { date: '22 Oct', by: 'Rakesh Yadav (Class teacher)', text: 'Aarav solved the bonus fraction problem in class and explained it to his group. Great leadership!', kind: 'appreciation' },
-        { date: '09 Oct', by: 'Priya Iyer (Science)', text: 'Please ensure the science notebook is complete before the Term 1 checking.', kind: 'improvement' },
+        { date: '09 Oct', by: 'Priya Tiwari (Science)', text: 'Please ensure the science notebook is complete before the Term 1 checking.', kind: 'improvement' },
       ],
       cal: 'PPPPPHPPPPAPHPPPPPPHPPPPPPHP',
     },
     'S-DIYA': {
-      marks: { English: 93, Hindi: 89, Marathi: 86, Mathematics: 95, Science: 91, 'Social Science': 88, Computer: 97 },
+      marks: { English: 93, Hindi: 89, Sanskrit: 86, Mathematics: 95, Science: 91, 'Social Science': 88, Computer: 97 },
       homework: [
-        { subj: 'English', title: 'Write five sentences about your favourite festival', due: '29 Oct', by: 'Swati Jadhav', status: 'pending' },
+        { subj: 'English', title: 'Write five sentences about your favourite festival', due: '29 Oct', by: 'Swati Pathak', status: 'pending' },
         { subj: 'Mathematics', title: 'Tables of 7 and 8 — practice sheet', due: 'Tomorrow', by: 'Amit Verma', status: 'pending' },
       ],
       remarks: [
-        { date: '26 Oct', by: 'Asha Shinde (Class teacher)', text: 'Diya recited her poem beautifully at the morning assembly. Very confident!', kind: 'appreciation' },
+        { date: '26 Oct', by: 'Asha Ojha (Class teacher)', text: 'Diya recited her poem beautifully at the morning assembly. Very confident!', kind: 'appreciation' },
       ],
       cal: 'PPPPPHPPPPPPHPPPPPPHPPPPPPHP',
     },
@@ -171,7 +171,7 @@
     ['G6', 'P', 'Breach-response runbook; no synthetic seed in production'],
     ['G7', 'S', 'WhatsApp sender verified; templates approved per language'],
     ['G8', 'S', 'Consent verified for ≥ 90% of primary guardians; caps and kill switch'],
-    ['G9', 'S', 'Native-speaker review of every Hindi/Marathi template'],
+    ['G9', 'S', 'Native-speaker review of every Hindi template'],
     ['G10', 'S', 'Opening balances reconciled and signed off; outage procedure'],
     ['G11', 'S', 'Report-card golden set signed off for the grading scheme'],
     ['G12', 'S', 'Parent portal readiness: notice, security sign-off, sign-in code template'],
@@ -189,11 +189,11 @@
   D.audit = [
     ['09:14', 'Rakesh Yadav', 'ATTENDANCE_SUBMITTED', 'Section 6-B · 3 absent'],
     ['09:05', 'System', 'NOTIFICATION_SENT', 'Absence alert · 3 guardians · Hindi template v2'],
-    ['08:58', 'Vikram Joshi', 'PAYMENT_POSTED', 'Receipt R/26-27/01187 · ₹4,500 · cash'],
-    ['08:41', 'Sunita Patil', 'GUARDIAN_CONTACT_CHANGED', 'Guardian of S2417 · mobile changed (value erasable)'],
-    ['08:30', 'Dr. Anjali Deshpande', 'CONCESSION_APPROVED', 'Sibling concession 10% · S2455'],
-    ['08:02', 'Vikram Joshi', 'SIGN_IN', 'Office desktop · Chrome'],
-    ['07:55', 'Sunita Patil', 'SIGN_IN', 'Office desktop · Edge'],
+    ['08:58', 'Vikram Prasad', 'PAYMENT_POSTED', 'Receipt R/26-27/01187 · ₹4,500 · cash'],
+    ['08:41', 'Sunita Kumari', 'GUARDIAN_CONTACT_CHANGED', 'Guardian of S2417 · mobile changed (value erasable)'],
+    ['08:30', 'Dr. Anjali Sinha', 'CONCESSION_APPROVED', 'Sibling concession 10% · S2455'],
+    ['08:02', 'Vikram Prasad', 'SIGN_IN', 'Office desktop · Chrome'],
+    ['07:55', 'Sunita Kumari', 'SIGN_IN', 'Office desktop · Edge'],
     ['Yesterday', 'Operator (Ankit)', 'SUPPORT_ACCESS_GRANTED', '30-minute, read-only, reason: import help'],
   ];
 })();

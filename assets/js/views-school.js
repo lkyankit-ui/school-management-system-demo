@@ -30,7 +30,7 @@
       </div>
       <div class="grid g3 mt">
         <div class="card"><h3>My sections</h3>${[['6-B', 'Mathematics', 'Class teacher'], ['7-A', 'Science', 'Subject'], ['6-A', 'Mathematics', 'Subject']].map(([s, sub, k]) => `<div class="list-item"><span class="tag pri">${s}</span><div class="grow">${sub}<div class="small muted">${k}</div></div></div>`).join('')}</div>
-        <div class="card"><h3>My tasks</h3><div class="list-item"><span class="tag warn">Due 05 Nov</span><div class="grow">Science exhibition shortlist<div class="small muted">from Kavita Kulkarni (HOD)</div></div></div><div class="list-item"><span class="tag ok">Done</span><div class="grow">Term 1 question paper</div></div></div>
+        <div class="card"><h3>My tasks</h3><div class="list-item"><span class="tag warn">Due 05 Nov</span><div class="grow">Science exhibition shortlist<div class="small muted">from Kavita Jha (HOD)</div></div></div><div class="list-item"><span class="tag ok">Done</span><div class="grow">Term 1 question paper</div></div></div>
         <div class="card"><h3>Quick actions</h3><div class="stack"><a class="btn block" href="#/app/teacher/marks">📝 Enter Term 1 marks</a><a class="btn block" href="#/app/teacher/homework">📚 Give homework</a><a class="btn block" href="#/app/teacher/myatt">🌴 Apply for leave</a></div></div>
       </div>`;
   };
@@ -148,7 +148,7 @@
         <label class="field">Days<select name="days"><option>1</option><option>2</option><option>3</option></select></label>
         <label class="field">From<input type="date" name="from" value="2026-11-03"></label>
         <label class="field">Reason<input type="text" name="reason" value="Personal work"></label>
-        <div class="full"><button class="btn primary">Send to HOD</button> <span class="small muted">Routed to Kavita Kulkarni (HOD Science). You can never approve your own request.</span></div></div></form>
+        <div class="full"><button class="btn primary">Send to HOD</button> <span class="small muted">Routed to Kavita Jha (HOD Science). You can never approve your own request.</span></div></div></form>
       <div class="card"><h3>My requests</h3>${S().myLeaves.map((l) => `<div class="list-item"><div class="grow"><b>${esc(l.type)}</b><div class="small muted">${esc(l.from)} · ${l.days} day</div></div><span class="tag ${l.status === 'approved' ? 'ok' : l.status === 'rejected' ? 'bad' : 'warn'}">${l.status}</span></div>`).join('')}</div></div>`;
   }
   D.forms.leave = (d) => {
@@ -188,7 +188,7 @@
     const list = S().leaves.filter((l) => l.approver === 'HOD');
     return `<div class="card"><h3>Leave & attendance corrections — Science</h3><p class="small muted">Leave from you (an HOD) goes to the Principal. Nobody approves their own request.</p>
       ${list.map((l) => `<div class="list-item"><div class="grow"><b>${esc(l.who)}</b> · ${esc(l.type)}<div class="small muted">${esc(l.from)} · ${l.days} day · ${esc(l.reason)}</div></div>${l.status === 'pending' ? `<button class="btn sm primary" data-act="approve" data-kind="leaves" data-id="${l.id}">Approve</button><button class="btn sm danger" data-act="reject" data-kind="leaves" data-id="${l.id}">Reject</button>` : `<span class="tag ${l.status === 'approved' ? 'ok' : 'bad'}">${l.status}</span>`}</div>`).join('') || '<div class="empty">No requests</div>'}
-      <h3 class="mt">Cover for absent class teachers</h3><div class="list-item"><div class="grow"><b>Shruti Rao</b> (on leave) · class teacher of 7-B</div><select style="width:auto" data-change="cover"><option>Assign cover…</option><option>Nikhil Singh</option><option>Priya Iyer</option></select></div></div>`;
+      <h3 class="mt">Cover for absent class teachers</h3><div class="list-item"><div class="grow"><b>Shruti Srivastava</b> (on leave) · class teacher of 7-B</div><select style="width:auto" data-change="cover"><option>Assign cover…</option><option>Nikhil Singh</option><option>Priya Tiwari</option></select></div></div>`;
   }
   D.change.cover = (el) => D.toast(`${el.value} can mark 7-B attendance today only.`, 'ok');
 
@@ -209,10 +209,10 @@
       <label class="field">Remark<textarea name="text">Classroom observation: well-structured lesson on fractions.</textarea></label><label class="row small"><input type="checkbox" name="shared" checked> Share with the teacher</label><button class="btn primary">Save remark</button></div></form>
       <div class="card"><h3>Recent remarks</h3>${S().staffRemarks.map((r) => `<div class="list-item"><div class="grow"><b>${esc(r.about)}</b> · ${esc(r.date)}<div class="small muted">${esc(r.text)}</div></div><span class="tag ${r.shared ? 'info' : ''}">${r.shared ? 'shared' : 'private'}</span></div>`).join('')}</div></div>`;
   }
-  D.forms.sremark = (d) => { S().staffRemarks.unshift({ about: d.about, by: 'Kavita Kulkarni', date: 'Today', text: d.text, shared: !!d.shared }); D.save(); D.toast('Remark saved.', 'ok'); D.render(); };
+  D.forms.sremark = (d) => { S().staffRemarks.unshift({ about: d.about, by: 'Kavita Jha', date: 'Today', text: d.text, shared: !!d.shared }); D.save(); D.toast('Remark saved.', 'ok'); D.render(); };
 
   function hodMarks() {
-    const rows = [['Science', '6-A', 'Priya Iyer', 'submitted'], ['Mathematics', '6-B', 'Rakesh Yadav', S().marksSubmitted ? 'submitted' : 'draft'], ['Science', '7-A', 'Rakesh Yadav', 'approved'], ['Physics', '9-A', 'Kavita Kulkarni', 'approved'], ['Chemistry', '10-B', 'Nikhil Singh', 'draft']];
+    const rows = [['Science', '6-A', 'Priya Tiwari', 'submitted'], ['Mathematics', '6-B', 'Rakesh Yadav', S().marksSubmitted ? 'submitted' : 'draft'], ['Science', '7-A', 'Rakesh Yadav', 'approved'], ['Physics', '9-A', 'Kavita Jha', 'approved'], ['Chemistry', '10-B', 'Nikhil Singh', 'draft']];
     return `<div class="card"><h3>Term 1 marks review before lock</h3><p class="small muted">HOD review is mandatory before the Principal locks and publishes.</p>
       <div class="table-wrap"><table><tr><th>Subject</th><th>Section</th><th>Teacher</th><th>Average</th><th>Status</th><th></th></tr>${rows.map(([s, sec, t, st], i) => `<tr><td>${s}</td><td>${sec}</td><td>${t}</td><td class="num">${st === 'draft' ? '—' : 68 + i * 3 + '%'}</td><td><span class="tag ${st === 'approved' ? 'ok' : st === 'submitted' ? 'warn' : ''}">${st}</span></td><td>${st === 'submitted' ? `<button class="btn sm primary" data-act="marks-ok">Approve</button> <button class="btn sm" data-act="marks-return">Return</button>` : ''}</td></tr>`).join('')}</table></div></div>`;
   }
@@ -275,7 +275,7 @@
     S().paid = S().paid || {};
     S().paid[st.id] = D.paidOf(st.id) + amt;
     const r = { no: `R/26-27/0${S().receiptSeq++}`, student: `${st.name} (${st.section})`, amount: amt, mode: D.ui.payMode || 'Cash', time: D.nowTime(), lines: dueLines(amt) };
-    if (r.mode === 'Cheque') S().cheques.unshift({ no: '004613', bank: 'SBI Nashik', student: r.student, amount: amt, status: 'pending' });
+    if (r.mode === 'Cheque') S().cheques.unshift({ no: '004613', bank: 'SBI Bhagalpur', student: r.student, amount: amt, status: 'pending' });
     S().receipts.unshift(r); D.save();
     D.sendWA(st.guardian, 'Payment receipt', `Sunrise Public School: received ${money(amt)} for ${st.name} (${st.section}) by ${r.mode}. Receipt ${r.no}. Thank you!`, { quiet: true });
     D.modal(`${D.receiptHtml(r)}<div class="modal-actions"><button class="btn" data-act="print">🖨️ Print</button><button class="btn" data-act="print">Download PDF</button><button class="btn primary" data-act="modal-close">Done</button></div>`, { wide: true });

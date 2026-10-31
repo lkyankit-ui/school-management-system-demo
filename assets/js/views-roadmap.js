@@ -15,7 +15,7 @@
 
   // ---------- R1: UDISE+ / APAAR export ----------
   const CATS = ['General', 'OBC', 'SC', 'ST'];
-  const TONGUES = ['Marathi', 'Hindi', 'Marathi', 'Urdu', 'Marathi', 'Gujarati'];
+  const TONGUES = ['Hindi', 'Maithili', 'Hindi', 'Urdu', 'Bhojpuri', 'Angika'];
   const udise = (st) => {
     const h = hash(st.id);
     return {
