@@ -92,6 +92,7 @@
         <div class="row mt">
           <a class="btn primary lg" href="#roles">Explore as any role</a>
           <a class="btn lg" href="#/app/teacher/attendance">Mark attendance now</a>
+          <a class="btn lg" href="#tour">▶ Watch the 2-minute tour</a>
           <a class="btn lg" href="#contact">Book a free demo</a>
         </div>
         <p class="small muted mt">This is a clickable demo with synthetic data. Change anything — it is saved only in your browser. Use <b>Reset demo</b> at the top to start over.</p>
@@ -106,6 +107,15 @@
         </div>
         <div class="mini" style="margin:0">💬 “नमस्ते, Aarav आज विद्यालय में अनुपस्थित है…” <small>— absence alert, 09:05</small></div>
       </div>
+    </section>
+
+    <section class="section" id="tour">
+      <h2>Watch the 2-minute tour</h2>
+      <p class="muted">A narrated walk through the features that are built and ready today.</p>
+      <video controls preload="none" playsinline poster="media/tour-poster.jpg" style="width:100%;max-width:960px;display:block;border-radius:12px;background:#151432">
+        <source src="media/vidyalaya-erp-demo.mp4" type="video/mp4">
+        <a href="media/vidyalaya-erp-demo.mp4">Download the tour video (MP4)</a>
+      </video>
     </section>
 
     <section class="section" id="roles">
