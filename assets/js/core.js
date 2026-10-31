@@ -202,7 +202,7 @@
 
   function ribbon() {
     return `<div class="demo-ribbon no-print"><span>🎓 <b>Interactive demo</b> — synthetic data only, nothing is sent or stored on a server.</span>
-      <a href="#/">All features</a><a href="#/site/home">School website</a><a href="#contact">Interested? Contact us</a><button data-act="reset">${D.t('Reset demo')}</button></div>`;
+      <a href="#ready">Ready for demo</a><a href="#/site/home">School website</a><a href="#contact">Interested? Contact us</a><button data-act="reset">${D.t('Reset demo')}</button></div>`;
   }
 
   function shell(r) {
@@ -231,7 +231,7 @@
           <div class="title">${esc(D.t(navItem ? navItem.label : role.label))}</div>
           <label class="hide-sm small muted" for="role-switch">${D.t('Switch role')}</label>
           <select id="role-switch" data-change="role" aria-label="Switch role">${roleOpts}</select>
-          <select data-change="lang" aria-label="Language"><option value="en" ${D.prefs.lang === 'en' ? 'selected' : ''}>English</option><option value="hi" ${D.prefs.lang === 'hi' ? 'selected' : ''}>हिन्दी</option><option value="hinglish" ${D.prefs.lang === 'hinglish' ? 'selected' : ''}>Hinglish (beta)</option><option value="mr" ${D.prefs.lang === 'mr' ? 'selected' : ''}>मराठी (roadmap)</option></select>
+          <select data-change="lang" aria-label="Language"><option value="en" ${D.prefs.lang === 'en' ? 'selected' : ''}>English</option><option value="hi" ${D.prefs.lang === 'hi' ? 'selected' : ''}>हिन्दी</option><option value="hinglish" ${D.prefs.lang === 'hinglish' ? 'selected' : ''}>Hinglish</option><option value="mr" ${D.prefs.lang === 'mr' ? 'selected' : ''}>मराठी (roadmap)</option></select>
           <select class="hide-sm" data-change="preset" aria-label="Theme preset">${D.presets.map(([k, v]) => `<option value="${k}" ${D.prefs.preset === k ? 'selected' : ''}>${v}</option>`).join('')}</select>
           <button class="btn sm" data-act="theme" aria-label="Toggle dark mode">${D.prefs.theme === 'dark' ? '☀️' : '🌙'}</button>
           <div class="avatar" title="${esc(person.name)}">${esc(person.initials)}</div>

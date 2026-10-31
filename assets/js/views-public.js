@@ -3,36 +3,56 @@
   const D = window.DEMO;
   const { esc, money } = D;
 
-  // Status mirrors the main repository's sprint-status.yaml on 31 Oct 2026 (56 of 184 stories merged).
-  // built = merged to master, progress = some stories merged or in review, planned = designed in BMAD, not built yet.
+  // Mirrors the main repository's sprint-status.yaml on 31 Oct 2026.
+  // ready = merged to master, so it can be shown to a school as working; upcoming = not built yet (the demo screen is a preview).
+  D.storiesBuilt = 56;
+  D.storiesTotal = 184;
   D.featureCatalog = [
-    { epic: 1, title: 'Multi-school isolation & secure sessions', status: 'built', desc: 'PostgreSQL row-level security per school, cookie sessions, least-privilege DB roles, append-only audit trail.', link: '#/app/principal/audit' },
-    { epic: 2, title: 'Operator console, branded schools & go-live gates', status: 'built', desc: 'Create a branded school, issue the first admin, module switches, gates G1–G12, time-boxed support access.', link: '#/app/operator/schools' },
-    { epic: 3, title: 'School setup & people', status: 'built', desc: 'Account & language (English, हिन्दी, Hinglish), roles, staff, fully editable school profile, classes/sections/subjects, calendar, students, guardians, enrolments, year rollover, teacher assignments.', link: '#/app/admin/students' },
-    { epic: 4, title: 'Import students from Excel/CSV', status: 'built', desc: 'Safe upload → map columns → dry run → fix → commit all-or-nothing → re-import changes → roll back within 7 days.', link: '#/app/admin/import' },
-    { epic: 5, title: 'Daily attendance in 30 seconds', status: 'progress', desc: 'Everyone starts Present; tap the absentees; correction window before alerts; offline sync queue. (Built: my sections, submit by exception, held absence alerts, corrections, server replay of queued changes. Next: on-device queue and installable app.)', link: '#/app/teacher/attendance' },
-    { epic: 6, title: 'Guardian consent & WhatsApp messaging', status: 'planned', desc: 'Consent and opt-in, Hindi/English templates, absence alerts, notices, caps, kill switch, delivery status, replies.', link: '#/app/admin/messaging' },
-    { epic: 7, title: 'Production readiness', status: 'planned', desc: 'Self-hosted production in India, backups with restore drills, monitoring, security review, breach runbook.', link: '#/app/operator/gates' },
-    { epic: 8, title: 'Fee counter & ledger', status: 'progress', desc: 'Fee structures, concessions, counter collection with numbered receipts, cheques, reversals, day close, reports. (Built: fee heads, paise-exact ledger, fee structures and instalments, dues after transfers and leavers. Next: concessions and the counter.)', link: '#/app/accountant/collect' },
-    { epic: 9, title: 'Exams & report cards', status: 'planned', desc: 'Exam setup, marks entry, lock, branded report-card PDFs, publish with undo window, WhatsApp delivery.', link: '#/app/teacher/marks' },
-    { epic: 10, title: 'Today view, reports & data rights', status: 'progress', desc: 'Principal’s Today in ten seconds, audit log, safe CSV exports, data export and erasure requests. (Built: per-school audit log.)', link: '#/app/principal/today' },
-    { epic: 11, title: 'Public school website & admissions', status: 'planned', desc: 'Branded website, notices, galleries, mandatory disclosure, online admission applications and enquiries.', link: '#/site/home' },
-    { epic: 12, title: 'Student & teacher portals', status: 'planned', desc: 'Students see their own homework, results and fees; teachers publish homework to their sections.', link: '#/app/student/home' },
-    { epic: 13, title: 'Online fee payment', status: 'planned', desc: 'Hosted checkout (sandbox), exactly-once ledger posting, receipts, reconciliation of uncertain outcomes.', link: '#/app/parent/fees' },
-    { epic: 14, title: 'HOD, class teachers & staff attendance', status: 'planned', desc: 'Additive roles, departments, staff self check-in, leave with HOD/Principal approval, cover assignments.', link: '#/app/teacher/myatt' },
-    { epic: 15, title: 'HOD & Principal oversight', status: 'planned', desc: 'Department home, staff tasks, remarks about teachers, marks review before lock, syllabus progress.', link: '#/app/hod/dept' },
-    { epic: 16, title: 'Parent portal', status: 'planned', desc: 'WhatsApp-code sign-in, child switcher, attendance calendar, absence notes, results, fees, remarks, PTM RSVP.', link: '#/app/parent/home' },
+    { epic: 1, title: 'Multi-school isolation & secure sessions', link: '#/app/principal/audit',
+      ready: [['Each school’s data isolated in the database', '#/app/operator/overview'], ['Secure sign-in per school', '#/app/principal/today'], ['Four school roles with permission checks', '#/app/admin/staff'], ['Append-only audit trail', '#/app/principal/audit']] },
+    { epic: 2, title: 'Operator console, branded schools & go-live gates', link: '#/app/operator/schools',
+      ready: [['Operator overview without personal data', '#/app/operator/overview'], ['Create a branded school and its first admin', '#/app/operator/schools'], ['Go-live gates G1–G12', '#/app/operator/gates'], ['Module switches and messaging mode', '#/app/operator/modules'], ['Audited, time-boxed support access', '#/app/operator/support']] },
+    { epic: 3, title: 'School setup & people', link: '#/app/admin/students',
+      ready: [['My account: language (English, हिन्दी, Hinglish) and appearance', '#/app/student/account'], ['Staff accounts and roles', '#/app/admin/staff'], ['Fully editable school profile and settings', '#/app/admin/settings'], ['Academic years, classes, sections and subjects', '#/app/admin/academic'], ['School calendar of holidays and closures', '#/app/admin/calendar'], ['Students, guardians and enrolments', '#/app/admin/students'], ['Teacher assignments and year rollover', '#/app/admin/academic']] },
+    { epic: 4, title: 'Import students from Excel/CSV', link: '#/app/admin/import',
+      ready: [['Upload, map columns, dry run, fix rows, commit all-or-nothing', '#/app/admin/import'], ['Re-import changes and roll back within 7 days', '#/app/admin/import']] },
+    { epic: 5, title: 'Daily attendance in 30 seconds', link: '#/app/teacher/attendance',
+      ready: [['My sections and today’s roster', '#/app/teacher/today'], ['Mark attendance by tapping only the absentees', '#/app/teacher/attendance'], ['Absence alerts held for a correction window', '#/app/teacher/attendance']],
+      upcoming: 'Offline queue on the phone, installable app, past-date edits by the School Admin, pending-sections panel.' },
+    { epic: 6, title: 'Guardian consent & WhatsApp messaging', link: '#/app/admin/messaging', ready: [],
+      upcoming: 'Consent and opt-in, Hindi/English templates, absence alerts, notices, caps, kill switch, delivery status, replies.' },
+    { epic: 7, title: 'Production readiness', link: '#/app/operator/gates', ready: [],
+      upcoming: 'Self-hosted production in India, backups with restore drills, monitoring, security review, breach runbook.' },
+    { epic: 8, title: 'Fee counter & ledger', link: '#/app/accountant/collect',
+      ready: [['Fee heads and fee settings', '#/app/admin/fees'], ['Fee structures, instalments and dues', '#/app/admin/fees'], ['Dues adjusted for transfers, leavers and year rollover', '#/app/admin/fees']],
+      upcoming: 'Concessions with Principal approval, fee counter with numbered receipts, cheques, reversals, day close, fee reports, WhatsApp fee reminders.' },
+    { epic: 9, title: 'Exams & report cards', link: '#/app/teacher/marks', ready: [],
+      upcoming: 'Exam setup, marks entry, lock, branded report-card PDFs, publish with undo window, WhatsApp delivery.' },
+    { epic: 10, title: 'Today view, reports & data rights', link: '#/app/principal/today',
+      ready: [['Per-school audit log with filters', '#/app/principal/audit']],
+      upcoming: 'Principal’s Today in ten seconds, safe CSV exports, data export and erasure requests.' },
+    { epic: 11, title: 'Public school website & admissions', link: '#/site/home', ready: [],
+      upcoming: 'Branded website, notices, galleries, mandatory disclosure, online admission applications and enquiries.' },
+    { epic: 12, title: 'Student & teacher portals', link: '#/app/student/home', ready: [],
+      upcoming: 'Students see their own homework, results and fees; teachers publish homework to their sections.' },
+    { epic: 13, title: 'Online fee payment', link: '#/app/parent/fees', ready: [],
+      upcoming: 'Hosted checkout (sandbox), exactly-once ledger posting, receipts, reconciliation of uncertain outcomes.' },
+    { epic: 14, title: 'HOD, class teachers & staff attendance', link: '#/app/teacher/myatt', ready: [],
+      upcoming: 'Additive roles, departments, staff self check-in, leave with HOD/Principal approval, cover assignments.' },
+    { epic: 15, title: 'HOD & Principal oversight', link: '#/app/hod/dept', ready: [],
+      upcoming: 'Department home, staff tasks, remarks about teachers, marks review before lock, syllabus progress.' },
+    { epic: 16, title: 'Parent portal', link: '#/app/parent/home', ready: [],
+      upcoming: 'WhatsApp-code sign-in, child switcher, attendance calendar, absence notes, results, fees, remarks, PTM RSVP.' },
   ];
   // Post-pilot roadmap (see ROADMAP-PLAN.md). Not in the 16 epics yet; starts after they are finished.
   D.roadmapCatalog = [
     { n: 'R1', title: 'UDISE+ & APAAR government export', status: 'roadmap', desc: 'Check every student against UDISE+ fields, fix missing data, and download the government CSV in one click.', link: '#/app/admin/gov' },
-    { n: 'R2', title: 'Hinglish (Roman Hindi)', status: 'built', desc: 'Hindi written in English letters — “Aaj ki haaziri”, “Fees jama karein”. Built for the Bihar pilot (Story 3.14), with English as the default. Try it from the language switch.', link: '#/app/teacher/today' },
     { n: 'R3', title: 'More regional languages', status: 'roadmap', desc: 'Marathi (try it now), then Bengali, Punjabi, Gujarati, Odia and Maithili — switched on per school, each after native-speaker review.', link: '#/app/admin/today' },
     { n: 'R4', title: 'Two-way WhatsApp for parents', status: 'exploring', desc: 'Parents reply LEAVE, FEES or RESULT on WhatsApp and get an instant answer — no app needed. Open 💬 and tap a reply.', link: '#/app/parent/home' },
     { n: 'R5', title: 'Tally accounting export', status: 'roadmap', desc: 'Export the day’s receipts as Tally vouchers so the school’s CA does not retype anything.', link: '#/app/accountant/tally' },
     { n: 'R6', title: 'Certificates & transfer certificate', status: 'roadmap', desc: 'Issue numbered Transfer, Bonafide and Character certificates with the school’s letterhead.', link: '#/app/admin/certs' },
   ];
-  const statusTag = (s) => ({ built: '<span class="tag ok">✓ Built</span>', progress: '<span class="tag warn">◐ In progress</span>', planned: '<span class="tag info">○ Planned · demo only</span>', roadmap: '<span class="tag pri">◇ Roadmap · after pilot</span>', prepilot: '<span class="tag ok">◆ Approved · before pilot</span>', exploring: '<span class="tag">? Exploring · not decided</span>' }[s]);
+  const statusTag = (s) => ({ ready: '<span class="tag ok">✓ Ready for demo</span>', partly: '<span class="tag warn">◐ Partly ready</span>', upcoming: '<span class="tag info">○ Upcoming · preview only</span>', roadmap: '<span class="tag pri">◇ Roadmap · after pilot</span>', prepilot: '<span class="tag ok">◆ Approved · before pilot</span>', exploring: '<span class="tag">? Exploring · not decided</span>' }[s]);
   D.roadmapBanner = (id) => {
     const r = D.roadmapCatalog.find((x) => x.n === id);
     return `<div class="notice-banner mb" style="border-color:var(--secondary)"><b>${r.status === 'exploring' ? '? Exploring' : '◇ Roadmap'} — ${esc(r.title)}.</b> <span class="small">Planned after all 16 epics and the pilot are finished. This screen is a preview with demo data.</span></div>`;
@@ -50,15 +70,15 @@
   ];
 
   D.views.landing = () => {
-    const built = D.featureCatalog.filter((f) => f.status === 'built').length;
-    const prog = D.featureCatalog.filter((f) => f.status === 'progress').length;
+    const ready = D.featureCatalog.filter((f) => f.ready.length);
+    const upcoming = D.featureCatalog.filter((f) => f.upcoming);
     return `
     <header class="landing-nav">
       <a class="brand" href="#/"><div class="logo">V</div>Vidyalaya ERP <span class="tag pri">Demo</span></a>
       <div class="row">
-        <a class="btn ghost" href="#features">Features</a>
+        <a class="btn ghost" href="#ready">Ready for demo</a>
         <a class="btn ghost" href="#roles">Try a role</a>
-        <a class="btn ghost" href="#roadmap">Roadmap</a>
+        <a class="btn ghost" href="#upcoming">Upcoming</a>
         <a class="btn ghost" href="#contact">Contact</a>
         <a class="btn" href="#/site/home">School website</a>
         <a class="btn primary" href="#/app/principal/today">Open the app →</a>
@@ -97,20 +117,27 @@
       </div>
     </section>
 
-    <section class="section" id="features">
-      <div class="row between"><h2 style="margin:0">Every feature, one click away</h2>
-        <div class="legend">${statusTag('built')} ${statusTag('progress')} ${statusTag('planned')}</div></div>
-      <p class="muted">16 product epics. ${built} are fully built and ${prog} are partly built in the main codebase; the rest are designed and shown here as working demos.</p>
-      <div class="grid g2">${D.featureCatalog.map((f) => `
-        <div class="card"><div class="row between"><span class="tag">Epic ${f.epic}</span>${statusTag(f.status)}</div>
-          <h3 class="mt" style="margin-bottom:4px">${esc(f.title)}</h3><p class="muted small">${esc(f.desc)}</p>
-          <a class="btn sm primary" href="${f.link}">Try it →</a></div>`).join('')}
+    <section class="section" id="ready">
+      <div class="row between"><h2 style="margin:0">Ready for demo</h2>
+        <div class="legend">${statusTag('ready')} ${statusTag('partly')}</div></div>
+      <p class="muted">Built and working in the real product: ${D.storiesBuilt} of ${D.storiesTotal} stories. Click any item to see it.</p>
+      <div class="grid g2">${ready.map((f) => `
+        <div class="card"><div class="row between"><span class="tag">Epic ${f.epic}</span>${statusTag(f.upcoming ? 'partly' : 'ready')}</div>
+          <h3 class="mt" style="margin-bottom:4px">${esc(f.title)}</h3>
+          <ul class="small" style="padding-left:18px;margin:6px 0">${f.ready.map(([t, href]) => `<li><a href="${href}">${esc(t)}</a></li>`).join('')}</ul>
+          ${f.upcoming ? '<p class="small muted" style="margin:0">The rest is listed under Upcoming.</p>' : ''}</div>`).join('')}
       </div>
     </section>
 
-    <section class="section" id="roadmap">
-      <div class="row between"><h2 style="margin:0">Coming next</h2><div class="legend">${statusTag('built')} ${statusTag('roadmap')} ${statusTag('exploring')}</div></div>
-      <p class="muted">Hinglish is built for the Bihar pilot. The rest are planned once all 16 epics are finished and the pilot school is live; those screens are previews only.</p>
+    <section class="section" id="upcoming">
+      <div class="row between"><h2 style="margin:0">Upcoming</h2><div class="legend">${statusTag('upcoming')} ${statusTag('roadmap')} ${statusTag('exploring')}</div></div>
+      <p class="muted">Designed but not built yet. These demo screens show how they will work, using sample data.</p>
+      <div class="grid g2">${upcoming.map((f) => `
+        <div class="card" style="border-style:dashed"><div class="row between"><span class="tag">Epic ${f.epic}</span>${statusTag('upcoming')}</div>
+          <h3 class="mt" style="margin-bottom:4px">${esc(f.title)}</h3><p class="muted small">${esc(f.upcoming)}</p>
+          <a class="btn sm" href="${f.link}">Preview →</a></div>`).join('')}
+      </div>
+      <h3 class="mt">After the pilot</h3>
       <div class="grid g3">${D.roadmapCatalog.map((f) => `
         <div class="card" style="border-style:dashed"><div class="row between"><span class="tag">${f.n}</span>${statusTag(f.status)}</div>
           <h3 class="mt" style="margin-bottom:4px">${esc(f.title)}</h3><p class="muted small">${esc(f.desc)}</p>

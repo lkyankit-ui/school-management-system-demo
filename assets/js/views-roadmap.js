@@ -139,7 +139,7 @@
     D.save(); D.renderWA();
   };
 
-  // ---------- R2: Marathi ----------
+  // ---------- R3: Marathi ----------
   const MR = {
     'Today': 'आज', 'Students': 'विद्यार्थी', 'Guardians': 'पालक', 'Attendance': 'हजेरी', 'Fees': 'शुल्क', 'Exams': 'परीक्षा', 'Results': 'निकाल',
     'Homework': 'गृहपाठ', 'Notices': 'सूचना', 'Staff': 'कर्मचारी', 'Settings': 'सेटिंग्ज', 'Approvals': 'मंजुरी', 'Reports': 'अहवाल', 'Audit log': 'ऑडिट लॉग',
@@ -152,7 +152,7 @@
     'Good morning': 'सुप्रभात', 'Pay now': 'आता भरा', 'Report card': 'प्रगतिपत्रक', 'My account': 'माझे खाते', 'Reset demo': 'डेमो रीसेट करा',
     'Government reports': 'शासकीय अहवाल', 'Certificates': 'दाखले', 'Tally export': 'टॅली निर्यात', 'Support access': 'सहाय्य प्रवेश', 'Modules': 'मॉड्यूल',
   };
-  // ---------- R2: Hinglish (Hindi in Roman script, as typed on phones in Bihar and North India) ----------
+  // ---------- Hinglish, built as Story 3.14 (Hindi in Roman script, as typed on phones in Bihar and North India) ----------
   const HG = {
     'Today': 'Aaj', 'Students': 'Students', 'Guardians': 'Abhibhavak', 'Attendance': 'Haaziri', 'Fees': 'Fees', 'Exams': 'Pariksha', 'Results': 'Result',
     'Homework': 'Homework', 'Notices': 'Soochna', 'Staff': 'Staff', 'Settings': 'Settings', 'Approvals': 'Manzoori', 'Reports': 'Report', 'Audit log': 'Audit log',

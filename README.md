@@ -2,7 +2,7 @@
 
 This is a clickable demo of the school management system, with every role and every planned feature. It's a **pure static website**: no backend, no build step and no dependencies. All data is synthetic and lives only in the visitor's browser.
 
-> Feature cards on the landing page show which parts of the real product are built, in progress or planned. **Live demo:** https://lkyankit-ui.github.io/school-management-system-demo/
+> The landing page has two lists: **Ready for demo** (built in the real product, each item links to its screen) and **Upcoming** (not built yet; those screens are previews). **Live demo:** https://lkyankit-ui.github.io/school-management-system-demo/
 
 ## What you can try
 
@@ -18,9 +18,9 @@ This is a clickable demo of the school management system, with every role and ev
 | 🛰️ Operator | Ankit | All schools, create a branded school, go-live gates G1–G12, module switches, messaging mode, audited support access |
 | 🌐 Public website | Sunrise Public School | Home slider, notices, about, academics, admissions and fees, online application, facilities, gallery, mandatory disclosure, contact or enquiry |
 
-### Coming next
+### Upcoming
 
-The landing page has a separate **"Coming next"** section. **Hinglish** is built for the Bihar pilot (Story 3.14). UDISE+/APAAR export, more regional languages (Marathi first), two-way WhatsApp (exploring), Tally export and certificates/TC come after the pilot. Every preview screen carries a banner saying so. See [ROADMAP-PLAN.md](ROADMAP-PLAN.md) for what's planned and when.
+The **Upcoming** section lists the epics and parts of epics that aren't built yet, then the post-pilot roadmap. **Hinglish** is built (Story 3.14), so it is under Ready for demo. UDISE+/APAAR export, more regional languages (Marathi first), two-way WhatsApp (exploring), Tally export and certificates/TC come after the pilot. Every preview screen carries a banner saying so. See [ROADMAP-PLAN.md](ROADMAP-PLAN.md) for what's planned and when.
 
 There are also some cross-cutting features to try:
 
