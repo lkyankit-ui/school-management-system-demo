@@ -131,7 +131,7 @@
 
   // ---------- Contact the team (real details from D.contact; the page itself sends nothing) ----------
   const C = D.contact;
-  const waLink = (text) => `https://wa.me/${encodeURIComponent(C.whatsapp)}?text=${encodeURIComponent(text)}`;
+  const waLink = (text) => `https://wa.me/${String(C.whatsapp).replace(/\D/g, '')}?text=${encodeURIComponent(text)}`;
   const mailLink = (subject, body) => `mailto:${C.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const HELLO = 'Hello, I saw the Vidyalaya ERP demo and I am interested for our school.';
   function contactSection() {

@@ -24,8 +24,8 @@
   D.contact = {
     name: 'Ankit',
     email: 'lkyankit98523@gmail.com',
-    whatsapp: '', // digits with country code, e.g. '919800000000'
-    linkedin: '', // full https:// URL of a LinkedIn profile or website
+    whatsapp: '+917992341861', // country code + number, e.g. '+919800000000'
+    linkedin: 'https://www.linkedin.com/in/kankit17', // full https:// URL of a LinkedIn profile or website
   };
 
   D.people = {
