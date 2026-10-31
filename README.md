@@ -20,13 +20,17 @@ This is a clickable demo of the school management system, with every role and ev
 
 ### Coming next
 
-The landing page has a separate **"Coming next"** section. **Hinglish** is approved for the Bihar pilot (Story 3.14). UDISE+/APAAR export, more regional languages (Marathi first), two-way WhatsApp (exploring), Tally export and certificates/TC come after the pilot. Every preview screen carries a banner saying so. See [ROADMAP-PLAN.md](ROADMAP-PLAN.md) for what's planned and when.
+The landing page has a separate **"Coming next"** section. **Hinglish** is built for the Bihar pilot (Story 3.14). UDISE+/APAAR export, more regional languages (Marathi first), two-way WhatsApp (exploring), Tally export and certificates/TC come after the pilot. Every preview screen carries a banner saying so. See [ROADMAP-PLAN.md](ROADMAP-PLAN.md) for what's planned and when.
 
 There are also some cross-cutting features to try:
 
 - Switch roles, language (English or हिन्दी) and the five colour presets from the top bar, and toggle light or dark mode.
 - The 💬 button opens a **simulated guardian WhatsApp**. Absence alerts, receipts, results and notices land there.
 - **Reset demo** in the top ribbon restores the starting data.
+
+## Interested for your school?
+
+Open the **Contact** section at the bottom of the landing page (or **Interested? Contact us** in the top ribbon). Visitors can email or message Ankit, or fill a short **Book a free demo** form, which opens their own email or WhatsApp app with the details ready. The page itself sends nothing. The contact details live in one place, `D.contact` in `assets/js/data.js`; leave a value empty to hide that button.
 
 ## A suggested 5-minute walkthrough
 

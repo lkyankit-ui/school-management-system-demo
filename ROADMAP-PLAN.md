@@ -15,7 +15,7 @@ The demo shows the 16 planned product epics, plus a separate **"Coming next"** l
 
 ## When each item starts
 
-1. **R2 Hinglish:** now, as Story 3.14 in Epic 3. It's built before the attendance epic, so every later screen ships with Hinglish text.
+1. **R2 Hinglish:** built as Story 3.14 in Epic 3 (merged by 31 Oct 2026). It's built before the attendance epic, so every later screen ships with Hinglish text.
 2. **Everything else (R1, R3–R6):** after Epics 3–16 are finished and the pilot school is live. Each is then planned through BMAD: PRD, then architecture and UX if needed, then epics and stories, with review.
 
 ## Items, in priority order
@@ -23,7 +23,7 @@ The demo shows the 16 planned product epics, plus a separate **"Coming next"** l
 | # | Feature | Why | Status | Shown in the demo at |
 |---|---|---|---|---|
 | R1 | **UDISE+ / APAAR government export** | Every recognised school must file UDISE+ every year, and APAAR IDs are now required. This is the biggest office pain point in Tier 2/3 schools. | ◇ Roadmap | School Admin → **Government reports** |
-| R2 | **Hinglish (Hindi in English letters)** | The first pilot is in **Bihar**. Across North India most staff and parents read and type Hindi in Roman script on their phones ("Aaj ki haaziri", "Fees jama karein"), which is easier for them than formal Devanagari Hindi or English. | ◆ Approved · before pilot (Story 3.14) | Language switch → **Hinglish (beta)** |
+| R2 | **Hinglish (Hindi in English letters)** | The first pilot is in **Bihar**. Across North India most staff and parents read and type Hindi in Roman script on their phones ("Aaj ki haaziri", "Fees jama karein"), which is easier for them than formal Devanagari Hindi or English. | ✓ Built · before pilot (Story 3.14) | Language switch → **Hinglish (beta)** |
 | R3 | **More regional languages** | Each school can switch on the language its staff and parents use. In order: **Marathi** (try it now: language switch → मराठी), then Bengali, Punjabi, Gujarati and Odia, plus Maithili or Bhojpuri if Bihar schools ask. Each language needs strings, templates and native-speaker review. | ◇ Roadmap | Language switch → **मराठी (roadmap)** |
 | R4 | **Two-way WhatsApp for parents** | Parents can ask for leave, fees, results or homework without installing anything (no "app fatigue"). | ? Exploring | 💬 WhatsApp simulator → reply buttons **LEAVE / FEES / RESULT / HOMEWORK** |
 | R5 | **Tally accounting export** | Most schools' CAs keep the books in Tally. Exporting receipts as vouchers avoids retyping. | ◇ Roadmap | Accountant → **Tally export** |

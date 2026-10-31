@@ -3,19 +3,19 @@
   const D = window.DEMO;
   const { esc, money } = D;
 
-  // Status mirrors the main repository's sprint-status.yaml on 27 Oct 2026.
+  // Status mirrors the main repository's sprint-status.yaml on 31 Oct 2026 (56 of 184 stories merged).
   // built = merged to master, progress = some stories merged or in review, planned = designed in BMAD, not built yet.
   D.featureCatalog = [
     { epic: 1, title: 'Multi-school isolation & secure sessions', status: 'built', desc: 'PostgreSQL row-level security per school, cookie sessions, least-privilege DB roles, append-only audit trail.', link: '#/app/principal/audit' },
     { epic: 2, title: 'Operator console, branded schools & go-live gates', status: 'built', desc: 'Create a branded school, issue the first admin, module switches, gates G1–G12, time-boxed support access.', link: '#/app/operator/schools' },
-    { epic: 3, title: 'School setup & people', status: 'progress', desc: 'Account & language, roles, staff, school profile, classes/sections/subjects, students, guardians, enrolments. (Calendar, processing records, teacher assignments in review; Hinglish language approved as Story 3.14.)', link: '#/app/admin/students' },
-    { epic: 4, title: 'Import students from Excel/CSV', status: 'progress', desc: 'Safe upload (built) → map columns → dry run → fix → commit all-or-nothing → roll back within 7 days.', link: '#/app/admin/import' },
-    { epic: 5, title: 'Daily attendance in 30 seconds', status: 'planned', desc: 'Everyone starts Present; tap the absentees; works offline with a sync queue; correction window before alerts.', link: '#/app/teacher/attendance' },
+    { epic: 3, title: 'School setup & people', status: 'built', desc: 'Account & language (English, हिन्दी, Hinglish), roles, staff, fully editable school profile, classes/sections/subjects, calendar, students, guardians, enrolments, year rollover, teacher assignments.', link: '#/app/admin/students' },
+    { epic: 4, title: 'Import students from Excel/CSV', status: 'built', desc: 'Safe upload → map columns → dry run → fix → commit all-or-nothing → re-import changes → roll back within 7 days.', link: '#/app/admin/import' },
+    { epic: 5, title: 'Daily attendance in 30 seconds', status: 'progress', desc: 'Everyone starts Present; tap the absentees; correction window before alerts; offline sync queue. (Built: my sections, submit by exception, held absence alerts, corrections, server replay of queued changes. Next: on-device queue and installable app.)', link: '#/app/teacher/attendance' },
     { epic: 6, title: 'Guardian consent & WhatsApp messaging', status: 'planned', desc: 'Consent and opt-in, Hindi/English templates, absence alerts, notices, caps, kill switch, delivery status, replies.', link: '#/app/admin/messaging' },
     { epic: 7, title: 'Production readiness', status: 'planned', desc: 'Self-hosted production in India, backups with restore drills, monitoring, security review, breach runbook.', link: '#/app/operator/gates' },
-    { epic: 8, title: 'Fee counter & ledger', status: 'planned', desc: 'Fee structures, concessions, counter collection with numbered receipts, cheques, reversals, day close, reports.', link: '#/app/accountant/collect' },
+    { epic: 8, title: 'Fee counter & ledger', status: 'progress', desc: 'Fee structures, concessions, counter collection with numbered receipts, cheques, reversals, day close, reports. (Built: fee heads, paise-exact ledger, fee structures and instalments, dues after transfers and leavers. Next: concessions and the counter.)', link: '#/app/accountant/collect' },
     { epic: 9, title: 'Exams & report cards', status: 'planned', desc: 'Exam setup, marks entry, lock, branded report-card PDFs, publish with undo window, WhatsApp delivery.', link: '#/app/teacher/marks' },
-    { epic: 10, title: 'Today view, reports & data rights', status: 'planned', desc: 'Principal’s Today in ten seconds, audit log, safe CSV exports, data export and erasure requests.', link: '#/app/principal/today' },
+    { epic: 10, title: 'Today view, reports & data rights', status: 'progress', desc: 'Principal’s Today in ten seconds, audit log, safe CSV exports, data export and erasure requests. (Built: per-school audit log.)', link: '#/app/principal/today' },
     { epic: 11, title: 'Public school website & admissions', status: 'planned', desc: 'Branded website, notices, galleries, mandatory disclosure, online admission applications and enquiries.', link: '#/site/home' },
     { epic: 12, title: 'Student & teacher portals', status: 'planned', desc: 'Students see their own homework, results and fees; teachers publish homework to their sections.', link: '#/app/student/home' },
     { epic: 13, title: 'Online fee payment', status: 'planned', desc: 'Hosted checkout (sandbox), exactly-once ledger posting, receipts, reconciliation of uncertain outcomes.', link: '#/app/parent/fees' },
@@ -26,7 +26,7 @@
   // Post-pilot roadmap (see ROADMAP-PLAN.md). Not in the 16 epics yet; starts after they are finished.
   D.roadmapCatalog = [
     { n: 'R1', title: 'UDISE+ & APAAR government export', status: 'roadmap', desc: 'Check every student against UDISE+ fields, fix missing data, and download the government CSV in one click.', link: '#/app/admin/gov' },
-    { n: 'R2', title: 'Hinglish (Roman Hindi)', status: 'prepilot', desc: 'Hindi written in English letters — “Aaj ki haaziri”, “Fees jama karein”. Approved for the Bihar pilot (Story 3.14), with English as the default. Try it from the language switch.', link: '#/app/teacher/today' },
+    { n: 'R2', title: 'Hinglish (Roman Hindi)', status: 'built', desc: 'Hindi written in English letters — “Aaj ki haaziri”, “Fees jama karein”. Built for the Bihar pilot (Story 3.14), with English as the default. Try it from the language switch.', link: '#/app/teacher/today' },
     { n: 'R3', title: 'More regional languages', status: 'roadmap', desc: 'Marathi (try it now), then Bengali, Punjabi, Gujarati, Odia and Maithili — switched on per school, each after native-speaker review.', link: '#/app/admin/today' },
     { n: 'R4', title: 'Two-way WhatsApp for parents', status: 'exploring', desc: 'Parents reply LEAVE, FEES or RESULT on WhatsApp and get an instant answer — no app needed. Open 💬 and tap a reply.', link: '#/app/parent/home' },
     { n: 'R5', title: 'Tally accounting export', status: 'roadmap', desc: 'Export the day’s receipts as Tally vouchers so the school’s CA does not retype anything.', link: '#/app/accountant/tally' },
@@ -59,6 +59,7 @@
         <a class="btn ghost" href="#features">Features</a>
         <a class="btn ghost" href="#roles">Try a role</a>
         <a class="btn ghost" href="#roadmap">Roadmap</a>
+        <a class="btn ghost" href="#contact">Contact</a>
         <a class="btn" href="#/site/home">School website</a>
         <a class="btn primary" href="#/app/principal/today">Open the app →</a>
       </div>
@@ -71,6 +72,7 @@
         <div class="row mt">
           <a class="btn primary lg" href="#roles">Explore as any role</a>
           <a class="btn lg" href="#/app/teacher/attendance">Mark attendance now</a>
+          <a class="btn lg" href="#contact">Book a free demo</a>
         </div>
         <p class="small muted mt">This is a clickable demo with synthetic data. Change anything — it is saved only in your browser. Use <b>Reset demo</b> at the top to start over.</p>
       </div>
@@ -107,8 +109,8 @@
     </section>
 
     <section class="section" id="roadmap">
-      <div class="row between"><h2 style="margin:0">Coming next</h2><div class="legend">${statusTag('prepilot')} ${statusTag('roadmap')} ${statusTag('exploring')}</div></div>
-      <p class="muted">Hinglish is approved for the Bihar pilot. The rest are planned once all 16 epics are finished and the pilot school is live. All are previews only.</p>
+      <div class="row between"><h2 style="margin:0">Coming next</h2><div class="legend">${statusTag('built')} ${statusTag('roadmap')} ${statusTag('exploring')}</div></div>
+      <p class="muted">Hinglish is built for the Bihar pilot. The rest are planned once all 16 epics are finished and the pilot school is live; those screens are previews only.</p>
       <div class="grid g3">${D.roadmapCatalog.map((f) => `
         <div class="card" style="border-style:dashed"><div class="row between"><span class="tag">${f.n}</span>${statusTag(f.status)}</div>
           <h3 class="mt" style="margin-bottom:4px">${esc(f.title)}</h3><p class="muted small">${esc(f.desc)}</p>
@@ -123,7 +125,55 @@
         <div class="card"><h3>🎨 Every school’s brand</h3><p class="muted small">Five colour presets with light and dark modes — try them from the top bar inside the app.</p></div>
       </div>
     </section>
+    ${contactSection()}
     <footer class="section small muted" style="text-align:center">Vidyalaya ERP demo · synthetic data · © 2026</footer>`;
+  };
+
+  // ---------- Contact the team (real details from D.contact; the page itself sends nothing) ----------
+  const C = D.contact;
+  const waLink = (text) => `https://wa.me/${encodeURIComponent(C.whatsapp)}?text=${encodeURIComponent(text)}`;
+  const mailLink = (subject, body) => `mailto:${C.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const HELLO = 'Hello, I saw the Vidyalaya ERP demo and I am interested for our school.';
+  function contactSection() {
+    const buttons = [
+      C.whatsapp && `<a class="btn primary" href="${esc(waLink(HELLO))}" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>`,
+      C.email && `<a class="btn" href="${esc(mailLink('Vidyalaya ERP demo enquiry', HELLO))}">✉️ ${esc(C.email)}</a>`,
+      C.linkedin && `<a class="btn" href="${esc(C.linkedin)}" target="_blank" rel="noopener">🔗 LinkedIn</a>`,
+    ].filter(Boolean).join('');
+    return `
+    <section class="section" id="contact">
+      <div class="grid g2">
+        <div class="card">
+          <h2 style="margin-top:0">Interested for your school?</h2>
+          <p class="muted">Talk to ${esc(C.name)}, the founder. Ask for a free walkthrough on a call, or for a demo set up with your own school’s name, classes and fee heads.</p>
+          <ul class="muted small">
+            <li>Attendance, WhatsApp alerts, fees, exams and parent portal in one app</li>
+            <li>English, हिन्दी and Hinglish</li>
+            <li>Every school detail is editable — no code changes to onboard a new school</li>
+          </ul>
+          <div class="row mt">${buttons}</div>
+        </div>
+        <form class="card" data-form="book-demo">
+          <h3 style="margin-top:0">Book a free demo</h3>
+          <div class="stack">
+            <label class="field">Your name<input type="text" name="name" required autocomplete="name"></label>
+            <label class="field">School name and city<input type="text" name="school" required></label>
+            <label class="field">Your role<select name="role"><option>Principal</option><option>Owner / Trustee</option><option>School Admin</option><option>Teacher</option><option>Other</option></select></label>
+            <label class="field">Number of students<select name="size"><option>Under 300</option><option>300–800</option><option>800–1500</option><option>Over 1500</option></select></label>
+            <label class="field">Your phone or WhatsApp number<input type="tel" name="phone" required autocomplete="tel"></label>
+            <label class="field">Anything you want to see?<textarea name="msg" placeholder="e.g. fee receipts, WhatsApp absence alerts"></textarea></label>
+            <div class="row">${C.whatsapp ? '<button class="btn primary" name="via" value="wa">Send on WhatsApp</button>' : ''}${C.email ? `<button class="btn ${C.whatsapp ? '' : 'primary'}" name="via" value="mail">Send by email</button>` : ''}</div>
+            <p class="small muted">This opens your own WhatsApp or email app with the message ready. Nothing is sent until you press send there.</p>
+          </div>
+        </form>
+      </div>
+    </section>`;
+  }
+  D.forms['book-demo'] = (d, f, e) => {
+    const text = `${HELLO}\n\nName: ${d.name}\nSchool: ${d.school}\nRole: ${d.role}\nStudents: ${d.size}\nPhone: ${d.phone}${d.msg ? `\nWould like to see: ${d.msg}` : ''}`;
+    const via = (e && e.submitter && e.submitter.value) || (C.whatsapp ? 'wa' : 'mail');
+    if (via === 'wa') window.open(waLink(text), '_blank', 'noopener');
+    else location.href = mailLink(`Demo request — ${d.school}`, text);
   };
 
   // ---------- School website ----------

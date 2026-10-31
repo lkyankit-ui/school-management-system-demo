@@ -193,13 +193,16 @@
     app.innerHTML = ribbon() + html;
     D.renderWA();
     if (D.afterRender) { const f = D.afterRender; D.afterRender = null; f(); }
-    if (D._lastHash === location.hash) window.scrollTo(0, keepY); else window.scrollTo(0, 0);
+    // Plain anchors such as #features or #contact scroll to that section of the landing page.
+    const anchor = /^#[\w-]+$/.test(location.hash) && document.getElementById(location.hash.slice(1));
+    if (anchor) anchor.scrollIntoView();
+    else if (D._lastHash === location.hash) window.scrollTo(0, keepY); else window.scrollTo(0, 0);
     D._lastHash = location.hash;
   };
 
   function ribbon() {
     return `<div class="demo-ribbon no-print"><span>🎓 <b>Interactive demo</b> — synthetic data only, nothing is sent or stored on a server.</span>
-      <a href="#/">All features</a><a href="#/site/home">School website</a><button data-act="reset">${D.t('Reset demo')}</button></div>`;
+      <a href="#/">All features</a><a href="#/site/home">School website</a><a href="#contact">Interested? Contact us</a><button data-act="reset">${D.t('Reset demo')}</button></div>`;
   }
 
   function shell(r) {
@@ -270,7 +273,7 @@
     if (!f) return;
     e.preventDefault();
     const data = Object.fromEntries(new FormData(f).entries());
-    D.forms[f.dataset.form] && D.forms[f.dataset.form](data, f);
+    D.forms[f.dataset.form] && D.forms[f.dataset.form](data, f, e);
   });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') D.closeModal(); });
   window.addEventListener('hashchange', D.render);

@@ -19,6 +19,15 @@
     year: '2026–27', today: '2026-10-27', todayLabel: 'Tuesday, 27 October 2026',
   };
 
+  // Real contact details for schools interested in the product (not part of the synthetic data).
+  // Leave a value empty to hide that button.
+  D.contact = {
+    name: 'Ankit',
+    email: 'lkyankit98523@gmail.com',
+    whatsapp: '', // digits with country code, e.g. '919800000000'
+    linkedin: '', // full https:// URL of a LinkedIn profile or website
+  };
+
   D.people = {
     principal: { name: 'Dr. Anjali Deshpande', initials: 'AD', role: 'Principal', extra: 'also HOD Languages' },
     admin: { name: 'Sunita Patil', initials: 'SP', role: 'School Admin' },
