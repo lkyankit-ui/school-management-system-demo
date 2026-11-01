@@ -28,9 +28,12 @@ There are also some cross-cutting features to try:
 - The 💬 button opens a **simulated guardian WhatsApp**. Absence alerts, receipts, results and notices land there.
 - **Reset demo** in the top ribbon restores the starting data.
 
-## 2-minute video tour
+## Videos
 
-The landing page has a **Watch the 2-minute tour** player (`media/vidyalaya-erp-demo.mp4`): a 10-second intro, then a narrated walk through the Ready for demo features.
+The landing page's **See it in action** section has two players:
+
+- a 21-second highlight reel with music (`media/launch-21s.mp4`): attendance in two taps, English / हिन्दी / Hinglish, Excel import and fees;
+- the 2-minute narrated tour (`media/vidyalaya-erp-demo.mp4`): a 10-second intro, then a walk through the Ready for demo features.
 
 ## Interested for your school?
 
@@ -69,7 +72,7 @@ Routing uses `#/…` hashes, so no server rewrite rules are needed.
 
 ```
 index.html               entry point
-media/                   2-minute tour video and its poster image
+media/                   highlight reel, 2-minute tour and their poster images
 assets/css/app.css       design tokens (5 presets × light/dark) and components
 assets/js/data.js        synthetic school, students, staff, fees, exams, gates
 assets/js/core.js        state (localStorage), router, shell, i18n, theming, modal, toasts, WhatsApp simulator

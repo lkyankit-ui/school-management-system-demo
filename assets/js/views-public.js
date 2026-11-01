@@ -92,7 +92,7 @@
         <div class="row mt">
           <a class="btn primary lg" href="#roles">Explore as any role</a>
           <a class="btn lg" href="#/app/teacher/attendance">Mark attendance now</a>
-          <a class="btn lg" href="#tour">▶ Watch the 2-minute tour</a>
+          <a class="btn lg" href="#tour">▶ Watch the videos</a>
           <a class="btn lg" href="#contact">Book a free demo</a>
         </div>
         <p class="small muted mt">This is a clickable demo with synthetic data. Change anything — it is saved only in your browser. Use <b>Reset demo</b> at the top to start over.</p>
@@ -110,12 +110,24 @@
     </section>
 
     <section class="section" id="tour">
-      <h2>Watch the 2-minute tour</h2>
-      <p class="muted">A narrated walk through the features that are built and ready today.</p>
-      <video controls preload="none" playsinline poster="media/tour-poster.jpg" style="width:100%;max-width:960px;display:block;border-radius:12px;background:#151432">
-        <source src="media/vidyalaya-erp-demo.mp4" type="video/mp4">
-        <a href="media/vidyalaya-erp-demo.mp4">Download the tour video (MP4)</a>
-      </video>
+      <h2>See it in action</h2>
+      <p class="muted">A 21-second highlight reel, and a narrated walk through the features that are built and ready today.</p>
+      <div class="grid g2">
+        <div>
+          <video controls preload="none" playsinline poster="media/launch-poster.jpg" style="width:100%;display:block;border-radius:12px;background:#151432">
+            <source src="media/launch-21s.mp4" type="video/mp4">
+            <a href="media/launch-21s.mp4">Download the highlight video (MP4)</a>
+          </video>
+          <p class="small muted mt"><b>21-second highlights</b> · attendance, languages, Excel import, fees</p>
+        </div>
+        <div>
+          <video controls preload="none" playsinline poster="media/tour-poster.jpg" style="width:100%;display:block;border-radius:12px;background:#151432">
+            <source src="media/vidyalaya-erp-demo.mp4" type="video/mp4">
+            <a href="media/vidyalaya-erp-demo.mp4">Download the tour video (MP4)</a>
+          </video>
+          <p class="small muted mt"><b>2-minute narrated tour</b> · every built feature, step by step</p>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="roles">
